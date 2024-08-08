@@ -1,0 +1,40 @@
+
+import random
+
+# 정답은 무작위로 설정
+answer = random.randint(1, 100)
+
+print("숫자 맞추기 게임을 시작합니다. 기회는 총 10번 있습니다.")
+
+# 총 10번의 기회를 제공
+for i in range(10):
+    # 남은 기회 수를 출력
+    print(f"남은 기회: {10 - i}번")
+    
+    try:
+        # 10번 동안 물어봄
+        num = int(input("1부터 100까지 중에서 숫자를 하나 추측해서 입력해 보세요: "))
+        
+        # 입력값이 1과 100 사이인지 확인
+        if num < 1 or num > 100:
+            print("잘못된 입력입니다. 1부터 100까지의 숫자를 입력해 주세요.")
+            continue
+        
+        # 조건문으로 답이 맞았는지, 맞지 않았는지 판별
+        if num == answer:
+            print("정답입니다. 축하합니다.")
+            break
+        elif num > answer:
+            print("너무 큽니다. 조금 줄여보세요.")
+        else:
+            print("너무 작습니다. 조금 키워보세요.")
+    except ValueError:
+        # 숫자가 아닌 값을 입력했을 때의 에러 처리
+        print("잘못된 입력입니다. 숫자를 입력해 주세요.")
+    
+    # 기회를 다 사용한 경우
+    if i == 9:
+        print(f"기회를 모두 사용했습니다. 정답은 {answer}였습니다.")
+        break
+
+print("게임이 종료되었습니다.")
