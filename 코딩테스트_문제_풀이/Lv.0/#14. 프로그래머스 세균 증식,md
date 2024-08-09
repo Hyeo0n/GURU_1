@@ -1,0 +1,12 @@
+https://school.programmers.co.kr/learn/courses/30/lessons/120910?language=python3
+
+<br>
+
+</br>
+
+```
+def solution(n, t):
+    # t 시간이 경과 후의 세균의 수를 계산
+    result = n * (2 ** t)
+    return result
+```
