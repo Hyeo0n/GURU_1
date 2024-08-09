@@ -1,5 +1,11 @@
 https://www.acmicpc.net/problem/10926
 
+<br>
+
+</br>
+
+```
 def solution():
     username = input("Enter your username: ")
     print(username + "??!")
+```
